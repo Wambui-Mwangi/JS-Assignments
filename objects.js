@@ -30,12 +30,19 @@ const products = [
   { name: 'Headphones', price: 80, category: 'Electronics' },
   { name: 'Shoes', price: 60, category: 'Clothing' },
 ];
-const categoriesTogether = (objArr) => {
-    if( objArr.categories === 'Electronics'){
-        // console.log(categories)
-        // const categories = []
-    }
-}
+
+  function divide(products) {
+    const divided = {};
+    products.forEach(function(product) {
+      if (divided[product.category]) {
+        divided[product.category].push(product);
+      } else {
+        divided[product.category] = [product];
+      }
+    });
+    return divided;
+  }
+  console.log(divide(products));
 
 
 
